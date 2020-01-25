@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Travel Planner</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Slabo+27px&display=swap" rel="stylesheet">  
+    <link href="https://fonts.googleapis.com/css?family=Bitter&display=swap" rel="stylesheet">
+  </head>
+  <body>
+    <div id = "app">
+      
+      <div id ='banner'>
+        Travel Planner
+      </div>
+
+      <div id='input'>
+        <div class ="rowForm">
+          <label for="city">My trip to:</label>
+          <input type="text" id="city" name='city' placeholder="Enter Location" class='field'>
+        </div>
+        <div id='duration'>
+          <div class ="rowForm">
+            <label for="startDate">Start Date:</label>
+            <input type="date"  name="startDate" id="startDate" class='field'>
+          </div>
+          <div class ="rowForm">
+            <label for="endDate">End Date:</label>
+            <input type="date"  name="endDate" id="endDate" class='field'>
+          </div>
+        </div>
+        <div>
+          <button id="generate" type = "submit" > Get Trip Details </button>
+        </div>
+      </div>
+
+      <div id='results' >
+        <div id ="photo"></div>
+        <div id = "output" >
+          <div id = "trip"></div>
+          <div id = "details"></div> 
+          <div id = "temp"></div> 
+          <div id = "extraInfo"></div>         
+        </div>
+      </div>
+    </div>
+    <script>
+    // Check that service workers are supported
+    if ('serviceWorker' in navigator) {
+      // Use the window load event to keep the page load performant
+      window.addEventListener('load', () => {
+        navigator.serviceWorker.register('/service-worker.js');
+      });
+    }
+    </script>
+    </body>
+    </html>
